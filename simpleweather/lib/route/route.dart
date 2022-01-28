@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:simpleweather/views/home.dart';
-import 'package:simpleweather/views/settings.dart';
 import 'package:simpleweather/views/start.dart';
 
 // Define Routes
@@ -8,7 +7,6 @@ import 'package:simpleweather/views/start.dart';
 // Route Names
 const String startPage = 'start';
 const String homePage = 'home';
-const String settingsPage = 'settings';
 
 // Controling the page flow with pre-setup routes
 Route<dynamic> controller(RouteSettings settings) {
@@ -17,8 +15,6 @@ Route<dynamic> controller(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const StartView());
     case homePage:
       return MaterialPageRoute(builder: (context) => const HomeView());
-    case settingsPage:
-      return MaterialPageRoute(builder: (context) => const SettingsView());
     default:
       throw ('This route name does not exit');
   }

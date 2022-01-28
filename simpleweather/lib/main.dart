@@ -12,10 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Crypto App',
-        theme: ThemeData(
-          primaryColor: Colors.green,
-        ),
+        title: 'Simple Weather',
+        theme: ThemeData(),
         themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: route.controller,

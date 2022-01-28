@@ -21,8 +21,7 @@ class StartView extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Center(
-                  child: Lottie.asset(
-                      'assets/WeatherLottieFiles/4800-weather-partly-cloudy.json'),
+                  child: getTime(),
                 ),
                 Text(
                   "Simple",
@@ -73,8 +72,18 @@ class StartView extends StatelessWidget {
                         elevation: 20,
                         fixedSize: const Size(250, 75),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))))
+                            borderRadius: BorderRadius.circular(20)))),
               ],
             )));
+  }
+
+  LottieBuilder getTime() {
+    DateTime currentTime = DateTime.now();
+
+    if (currentTime.hour > 18 || currentTime.hour < 7) {
+      return Lottie.asset('assets/WeatherLottieFiles/night/801.json');
+    } else {
+      return Lottie.asset('assets/WeatherLottieFiles/day/801.json');
+    }
   }
 }
